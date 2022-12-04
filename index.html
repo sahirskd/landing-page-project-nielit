@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://sahirskd.github.io/Landing-page/assets/normalize.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Raleway&display=swap"
+        rel="stylesheet">
+
+    <title>Landing Page by Sahir khan</title>
+    <style>
+        *,
+        :after,
+        :before {
+            box-sizing: border-box;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        span,
+        select,
+        button,
+        form,
+        input {
+            font-family: "Montserrat", sans-serif;
+        }
+
+        p,
+        div,
+        a {
+            font-family: "Raleway", sans-serif;
+        }
+
+        a.anchor-link:hover,
+        a.anchor-link:focus {
+            background-position-x: 100%;
+            background-size: 0 1px;
+            color: #316caf;
+        }
+
+        a.anchor-link {
+            background-image: linear-gradient(currentColor, currentColor);
+            background-position-y: 100%;
+            background-repeat: no-repeat;
+            background-size: 100% 1px;
+            color: #4975ba;
+            text-decoration: none;
+            transition: background-size 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        /* font-family: 'Raleway', sans-serif; */
+
+        /* media queries  */
+        @media screen and (max-width: 1000px) {
+            .hidden {
+                display: none !important;
+                opacity: 0;
+            }
+
+            .nav-link {
+                padding: 12px 0px !important;
+                margin: 0 5px !important;
+            }
+
+            #main>div.after-banner-text-container>div {
+                width: 100% !important;
+            }
+
+            #main>div.after-banner-text-container>div>p {
+                margin: 0 !important;
+            }
+
+            .button-with-icon {
+                position: relative !important;
+                bottom: 2rem !important;
+                left: -18rem !important;
+            }
+
+            .images-container {
+                flex-direction: column !important;
+            }
+
+            #main>div.feature-box-container>div.feature-box {
+                margin: 0 1rem !important;
+            }
+
+            .feature-box-inner-container {
+                flex-direction: column !important;
+            }
+
+            .feature-box-container {
+                border-width: 1rem !important;
+            }
+
+            .inner-containers {
+                padding: 0 0 1rem !important;
+            }
+
+            ul.features-list {
+                flex-direction: column !important;
+            }
+
+            .logo-container {
+                width: 100% !important;
+                display: flex !important;
+                overflow-y: auto !important;
+            }
+
+            #border-three::after {
+                display: none !important;
+            }
+
+            .fifth-column {
+                width: 90%;
+            }
+
+            .footer-container {
+                flex-direction: column !important;
+                margin: 0 1rem !important;
+            }
+
+            #border-three {
+                width: 95% !important;
+            }
+
+            .fifth-column>div {
+                margin: 1rem auto 0;
+            }
+
+            #copyright {
+                flex-direction: column !important;
+                text-align: center !important;
+            }
+
+            #hide-right-nav {
+                transition: all 0.3s;
+                opacity: 1;
+            }
+
+            #hide-right-nav>ul {
+                flex-direction: column;
+                justify-content: left;
+                text-align: left;
+                align-items: baseline;
+                width: 100%;
+                text-align: left;
+                position: absolute;
+                top: 2.7rem;
+                background: #fff;
+                width: 100%;
+                left: 0;
+                right: 0;
+                padding-bottom: 1rem;
+                border-bottom: 1px solid #d9d9d9;
+            }
+
+            #nav-icon {
+                display: block !important;
+            }
+
+            .video-container-product {
+                width: 98% !important;
+            }
+        }
+
+        /* media queries  */
+
+        ul {
+            margin: 0;
+        }
+
+        #header {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            border-bottom: 2px solid #f2f3f4;
+            height: 2.75rem;
+            font-family: "Montserrat", sans-serif;
+            font-size: 0.9375rem;
+            font-weight: 400;
+            z-index: 10;
+        }
+
+        #nav-bar div,
+        ul.navbar-list,
+        #nav-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        ul.left-list {
+            margin-left: 5.5rem;
+        }
+
+        #nav-bar>div {
+            width: 100%;
+        }
+
+        #nav-bar {
+            width: 90%;
+            margin: auto;
+            max-width: 1170px;
+        }
+
+        ul.navbar-list {
+            list-style: none;
+            text-decoration: none;
+        }
+
+        #header-img {
+            width: 8rem;
+            font-weight: 600;
+            position: absolute;
+            left: 2.4rem;
+            font-family: "Raleway", sans-serif;
+        }
+
+        #nav-icon {
+            display: none;
+            position: absolute;
+            top: 13px;
+            left: 10px;
+        }
+
+        #sign-in {
+            cursor: pointer;
+            border: 1px solid #25282d;
+            padding: 7px 12px;
+            font-weight: 500;
+            background: #fff;
+            transition: background-color 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        #sign-in:hover,
+        #sign-in:focus {
+            background-color: #e7e8e9;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            /* padding: 0 .875rem; */
+            padding: 12px 10px;
+            /* background: red; */
+            margin: 0px 8px;
+            background-position-y: 100%;
+            background-repeat: no-repeat;
+            background-size: 0 4px;
+            color: #25282d;
+            display: flex;
+            transition: background-size 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        ul>li>a.nav-link:hover,
+        ul>li>a.nav-link:focus {
+            background-image: linear-gradient(#bfbfbf, #bfbfbf);
+            background-position-x: 50%;
+            background-size: 100% 4px;
+            color: #25282d;
+        }
+
+        #main,
+        main {
+            display: block;
+            margin-top: 2.7rem;
+        }
+
+        #main>div>div.video-container {
+            overflow: hidden;
+            /* width: 100vw; */
+            height: 70vh;
+        }
+
+        .video-text-contianer {
+            color: #fff;
+            left: 50%;
+            margin: 0px auto;
+            position: absolute;
+            top: 40%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            z-index: 1;
+            /* padding: 2rem .5rem; */
+            text-align: center;
+        }
+
+        #main>div>div.video-text-contianer>h1 {
+            font-size: 3rem;
+        }
+
+        a.banner-button:hover {
+            background-color: #cd243b;
+        }
+
+        a.banner-button {
+            border: 2px solid transparent;
+            background-color: #dd2e3e;
+            color: #fff;
+            cursor: pointer;
+            display: inline-block;
+            font: normal normal 1rem/1rem BrandonText-Medium, sans-serif;
+            min-width: 12rem;
+            overflow: visible;
+            padding: calc(0.875rem - 2px) 1.5rem;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            white-space: nowrap;
+        }
+
+        #main>div.after-banner-text-container>div {
+            width: 70%;
+            margin: 0 auto;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        #main>div.after-banner-text-container>div>p {
+            margin: 0 5rem;
+        }
+
+        #main>div.image-with-button-contianer>section {
+            width: 80%;
+            margin: auto;
+        }
+
+        .flex-with-center {
+            width: 80%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: row;
+            align-content: center;
+            justify-content: space-between;
+        }
+
+        #main>div.image-with-button-contianer>section>a.main-image-container {
+            margin: 2rem auto;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .button-with-icon {
+            display: flex;
+            position: absolute;
+            font-family: "Montserrat", sans-serif;
+            font-weight: 500;
+            bottom: -19rem;
+            background: white;
+            color: #4975ba;
+            padding: 0.5rem 1rem;
+        }
+
+        .button-with-icon::after {
+            content: url(https://sahirskd.github.io/Landing-page/assets/download.svg);
+            display: inline-flex;
+            padding-left: 0.25rem;
+            transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .button-with-icon:hover::after {
+            transform: translateX(0.25rem);
+        }
+
+        #main>div.image-with-button-contianer>section>a>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .feature-box-container {
+            width: 95%;
+            margin: auto;
+            border: 3.5rem solid #d8f7f1;
+        }
+
+        #main>div.feature-box-container>div.feature-box {
+            text-align: center;
+            margin: 2rem 11rem 0.5rem;
+        }
+
+        .feature-box-inner-container {
+            display: flex;
+            margin: 2.5rem auto 0;
+        }
+
+        #main>div.feature-box-container>div>div>div>p {
+            line-height: 1.7;
+        }
+
+        .inner-containers {
+            text-align: left;
+            padding: 0 1.5rem 2rem;
+        }
+
+        span.feature-subHead {
+            margin-bottom: -1rem;
+            display: block;
+        }
+
+        div.features-items-container {
+            width: 90%;
+            margin: auto;
+        }
+
+        ul.features-list {
+            list-style-image: url(https://sahirskd.github.io/Landing-page/assets/icon.svg);
+            display: flex;
+            justify-content: space-around;
+            font-size: 1.2rem;
+        }
+
+        hr.feature-separator {
+            border: 1px solid #d9d9d9;
+            width: 96%;
+        }
+
+        li.features-items {
+            font-size: 1.3rem;
+            margin: 0 1rem;
+        }
+
+        .button-container {
+            text-align: center;
+            display: flex;
+            text-align: center;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        a.next-button-link:hover {
+            background-position-x: 0;
+            background-size: calc(100% - 12px) 1px;
+        }
+
+        a.next-button-link::after {
+            content: url(https://sahirskd.github.io/Landing-page/assets/arrow-next.svg);
+            transform: translateY(10px);
+            position: relative;
+            top: 2px;
+            left: 13px;
+        }
+
+        a.next-button-link {
+            background-image: linear-gradient(currentColor, currentColor);
+            background-position-x: calc(100% - 12px);
+            background-position-y: 100%;
+            background-repeat: no-repeat;
+            background-size: 100% 1px;
+            background-size: 0 1px;
+            text-decoration: none;
+            color: #4975ba;
+            /* font: normal normal 1rem/1.5rem BrandonText-Medium,sans-serif; */
+            transition: background-size 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            margin: 1rem auto 2rem;
+        }
+
+        .image-slide {
+            padding: 0 5px;
+        }
+
+        .logo-container {
+            width: 80%;
+            margin: 3rem auto 1rem;
+        }
+
+        .logo-image {
+            width: 8rem;
+            margin: 0 2.5rem;
+        }
+
+        #border-three::after {
+            content: "";
+            background: #e7e8e9;
+            width: 45rem;
+            height: 13rem;
+            position: absolute;
+            z-index: -1;
+        }
+
+        #border-three {
+            width: 50%;
+            margin: 2rem auto;
+            border: 1px solid #e7e8e9;
+            background-color: white;
+            padding: 1rem 0;
+        }
+
+        .country-logo {
+            position: relative;
+            top: 2px;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: flex-start;
+            margin: 2rem auto 0;
+        }
+
+        .fifth-column {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .social-icon {
+            margin: 0 0.7rem;
+        }
+
+        #footer>div>div.fifth-column.columns>div>a>img {
+            width: 33px;
+        }
+
+        #country-selector:focus,
+        #country-selector:focus-visible {
+            outline: none;
+        }
+
+        #country-selector {
+            background-color: transparent;
+            border: none;
+        }
+
+        .store-icon-image {
+            max-width: 8.5rem;
+        }
+
+        .store-promotion {
+            margin: 3rem auto 0;
+        }
+
+        .footer-links-list {
+            list-style: none;
+            margin-left: -2.5rem;
+        }
+
+        .footer-heading {
+            font-weight: 600;
+        }
+
+        .footer-links {
+            margin: 1rem auto;
+        }
+
+        .footer-links-list>.footer-links>a.anchor-link:hover,
+        #copyright>div>a.anchor-link:hover {
+            background-size: 100% 1px;
+            background-position-x: 0;
+        }
+
+        .footer-links-list>.footer-links>a.anchor-link,
+        #copyright>div>a.anchor-link {
+            color: #25282d;
+            background-position-x: 100%;
+            background-size: 0 1px;
+        }
+
+        #copyright {
+            width: 90%;
+            margin: auto;
+            margin: 1rem auto 0.5rem;
+            font-size: 14px;
+        }
+
+        #email:focus-visible {
+            outline: none;
+            border: 2px solid #a71528;
+        }
+
+        #email {
+            border: 2px solid #dd2e3e;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        #submit:hover,
+        submit:focus-visible {
+            outline: none;
+            background-color: #a71528;
+        }
+
+        #submit {
+            border: 2px solid #dd2e3e;
+            margin-top: 1rem;
+            background: #dd2e3e;
+            font-size: 1.2rem;
+            color: #fff;
+            transition: background-color 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .video-container-product {
+            width: 50%;
+            margin: 2rem auto;
+        }
+
+        #video {
+            width: 100%;
+        }
+
+        #sign-in>a {
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main-container">
+        <header id="header">
+            <nav id="nav-bar">
+                <div class="nav-div">
+                    <div class="nav-container-left">
+                        <span id="nav-icon"><img style="max-width: 18px;"
+                                src="https://sahirskd.github.io/Landing-page/assets/nav-icon.svg" alt=""></span>
+                        <img src="https://sahirskd.github.io/Landing-page/assets/logos/logo3.png" id="header-img">
+                        <ul class="navbar-list left-list">
+                            <li class="nav-items"><a class="nav-link" href="#form-container">Women</a></li>
+                            <li class="nav-items"><a class="nav-link" href="#features-box">Men</a></li>
+                            <li class="nav-items"><a class="nav-link" href="#kids">Kids</a></li>
+                        </ul>
+                    </div>
+                    <div id="hide-right-nav" class="nav-container-right hidden">
+                        <ul class="navbar-list">
+                            <li class="nav-items"><a class="nav-link" href="#features-box"> Style Guide</a></li>
+                            <li class="nav-items"><a class="nav-link" href="#impact"> Social Impact</a></li>
+                            <li class="nav-items"><a class="nav-link" href="#brands-logo"> FAQ</a></li>
+                            <li class="nav-items"><a class="nav-link" href="#footer"> Gift Card</a></li>
+                            <li class="nav-items"><a class="nav-link" href="#footer">Sign In</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main id="main">
+            <div class="video-banner-main-container">
+                <div class="video-text-contianer">
+                    <h1>Discover a new shopping <br> experience</h1><a href="#" class="banner-button">Take your style
+                        quiz</a>
+                </div>
+                <div class="video-container">
+                    <video src="https://d3ss0gp3e5d7m3.cloudfront.net/assets/images/gateway-stitch-fix-video.10yH0.mp4"
+                        class="" muted="true" loop="true" playsinline="true" autoplay="true"></video>
+                </div>
+            </div>
+            <div class="after-banner-text-container">
+                <div class="after-banner-text">
+                    <h1>Get style that’s 100% inspired by you</h1>
+                    <p>Tell us about your one-of-a-kind style, fit & price range in your quiz. We’ll curate pieces for
+                        you and
+                        listen to your feedback—so you always look and feel your best. No subscription required.
+                    </p>
+                </div>
+            </div>
+            <div class="image-with-button-contianer">
+                <section id="kids" class="images-container flex-with-center">
+                    <a href="#" class="main-image-container">
+                        <img src="https://sahirskd.github.io/Landing-page/assets/girl-image.jpg" alt="">
+                        <span class="button-with-icon">Women</span>
+                    </a>
+                    <a href="#" class="main-image-container">
+                        <img src="https://sahirskd.github.io/Landing-page/assets/south-boy-image.jpg" alt="">
+                        <span class="button-with-icon">Men</span>
+                    </a>
+                    <a href="#" class="main-image-container">
+                        <img src="https://sahirskd.github.io/Landing-page/assets/young-boy-image.jpg" alt="">
+                        <span class="button-with-icon">Kids</span>
+                    </a>
+                </section>
+            </div>
+            <div id="features-box" class="feature-box-container">
+                <div class="feature-box">
+                    <h1 class="inner-box-heading">Two ways to find what you love</h1>
+                    <div class="feature-box-inner-container">
+                        <div class="inner-containers">
+                            <span class="feature-subHead">FIRST</span>
+                            <h2>Get clothing hand selected by our expert stylists</h2>
+                            <p>Try on pieces at home, buy favorites and send back the rest. A $20 Fix styling fee covers
+                                your
+                                stylist’s expertise and time—it gets credited toward anything you keep.</p>
+                        </div>
+                        <div class="inner-containers">
+                            <span class="feature-subHead">FIRST</span>
+                            <h2>Get clothing hand selected by our expert stylists</h2>
+                            <p>Try on pieces at home, buy favorites and send back the rest. A $20 Fix styling fee covers
+                                your
+                                stylist’s expertise and time—it gets credited toward anything you keep.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="features-items-container">
+                    <hr class="feature-separator">
+                    <ul class="features-list">
+                        <li class="features-items">
+                            <h3>No subscription required</h3>
+                        </li>
+                        <li class="features-items">
+                            <h3>Free Shipping, returns exchanges</h3>
+                        </li>
+                        <li class="features-items">
+                            <h3>Personalized styles, fit &amp; prices</h3>
+                        </li>
+                    </ul>
+                    <div class="button-container">
+                        <a href="#" class="banner-button">Take your style quiz</a>
+                        <a href="#" class="next-button-link">Learn more about how it works</a>
+                    </div>
+                </div>
+            </div>
+            <div id="impact" class="after-banner-text-container">
+                <div class="after-banner-text">
+                    <h1>We find what’s right for you</h1>
+                    <p>When you look your best, you feel your best. Every piece is curated for your fit, your style and
+                        your life.
+                    </p>
+                </div>
+            </div>
+            <div class="video-container-product">
+                <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/c1O0sdApUq8?start=5"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+
+            <div id="brands-logo" class="after-banner-text-container">
+                <div class="after-banner-text">
+                    <h1>1,000+ top brands</h1>
+                    <p>
+                        Women’s sizes 0-24W (XS-3X)—<a class="anchor-link" href="">Plus</a>, <a class="anchor-link"
+                            href="">Petite</a> and <a class="anchor-link" href="">Maternity</a><br>
+                        Men’s sizes XS-3XL, waists 28-48ʺ and inseams 28-36ʺ—including <a class="anchor-link"
+                            href="">Big & Tall</a>
+                    </p>
+                </div>
+            </div>
+            <div class="logo-container">
+                <img class="logo-image" src="https://sahirskd.github.io/Landing-page/assets/logos/logo1.png" alt="">
+                <img class="logo-image" src="https://sahirskd.github.io/Landing-page/assets/logos/logo2.png" alt="">
+                <img class="logo-image" src="https://sahirskd.github.io/Landing-page/assets/logos/logo3.png" alt="">
+                <img class="logo-image" src="https://sahirskd.github.io/Landing-page/assets/logos/logo5.png" alt="">
+                <img class="logo-image" src="https://sahirskd.github.io/Landing-page/assets/logos/logo6.png" alt="">
+                <img class="logo-image" src="https://sahirskd.github.io/Landing-page/assets/logos/logo7.png" alt="">
+                <img class="logo-image" src="https://sahirskd.github.io/Landing-page/assets/logos/logo8.png" alt="">
+                <img class="logo-image" src="https://sahirskd.github.io/Landing-page/assets/logos/logo9.png" alt="">
+                <img class="logo-image" src="https://sahirskd.github.io/Landing-page/assets/logos/logo10.png" alt="">
+                <img class="logo-image" src="https://sahirskd.github.io/Landing-page/assets/logos/logo11.png" alt="">
+                <img class="logo-image" src="https://sahirskd.github.io/Landing-page/assets/logos/logo12.png" alt="">
+                <img class="logo-image" src="https://sahirskd.github.io/Landing-page/assets/logos/logo13.png" alt="">
+                <img class="logo-image" src="https://sahirskd.github.io/Landing-page/assets/logos/logo14.png" alt="">
+                <img class="logo-image" src="https://sahirskd.github.io/Landing-page/assets/logos/logo15.png" alt="">
+                <img class="logo-image" src="https://sahirskd.github.io/Landing-page/assets/logos/logo16.png" alt="">
+                <img class="logo-image" src="https://sahirskd.github.io/Landing-page/assets/logos/logo15.png" alt="">
+                <img class="logo-image" src="https://sahirskd.github.io/Landing-page/assets/logos/logo17.png" alt="">
+                <img class="logo-image" src="https://sahirskd.github.io/Landing-page/assets/logos/logo11.png" alt="">
+                <img class="logo-image" src="https://sahirskd.github.io/Landing-page/assets/logos/logo18.png" alt="">
+                <img class="logo-image" src="https://sahirskd.github.io/Landing-page/assets/logos/logo1.png" alt="">
+            </div>
+
+            <div id="form-container" class="final-CTA-container">
+                <div id="border-three" class="CTA-main-container button-container">
+                    <h1>Ready to get started?</h1>
+                    <form action="https://www.freecodecamp.com/email-submit" id="form">
+                        <input required placeholder="Enter your email" type="email" name="email" id="email">
+                        <input type="submit" id="submit" value="Submit">
+                    </form>
+                    <!-- <a href="#" class="banner-button">Take your style quiz</a> -->
+                    <p>Already have an account? <a href="#" class="anchor-link">Sign in</a> </p>
+                </div>
+            </div>
+        </main>
+        <footer id="footer">
+            <hr class="feature-separator">
+            <div class="footer-container">
+                <div class="first-column columns">
+                    <div class="footer-logo">
+                        <h1>Landing Page</h1>
+                    </div>
+                    <div class="selector-container">
+                        <span class="country-logo"><img style="width: 18px;"
+                                src="https://sahirskd.github.io/Landing-page/assets/logos/usa-circular.png"
+                                alt=""></span>
+                        <select name="country" id="country-selector">
+                            <option value="United States">United States</option>
+                            <option value="India">India</option>
+                        </select>
+                    </div>
+                    <div class="store-promotion">
+                        <a href="https://sahirskd.netlify.app/">
+                            <img class="store-icon-image"
+                                src="https://sahirskd.github.io/Landing-page/assets/store-icon.svg" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="second-column columns">
+                    <div class="footer-heading">The Services</div>
+                    <ul class="footer-links-list">
+                        <li class="footer-links"><a href="#" class="anchor-link">Gift Card</a></li>
+                        <li class="footer-links"><a href="#" class="anchor-link">iPhone App</a></li>
+                        <li class="footer-links"><a href="#" class="anchor-link">Business Casual</a></li>
+                        <li class="footer-links"><a href="#" class="anchor-link">Women’s Jeans</a></li>
+                        <li class="footer-links"><a href="#" class="anchor-link">Big & Tall</a></li>
+                        <li class="footer-links"><a href="#" class="anchor-link">Petite</a></li>
+                        <li class="footer-links"><a href="#" class="anchor-link">Maternity</a></li>
+                        <li class="footer-links"><a href="#" class="anchor-link">Plus Sizes</a></li>
+                    </ul>
+                </div>
+                <div class="third-column columns">
+                    <div class="footer-heading">The Company</div>
+                    <ul class="footer-links-list">
+                        <li class="footer-links"><a href="#" class="anchor-link">About Us</a></li>
+                        <li class="footer-links"><a href="#" class="anchor-link">Social Impact</a></li>
+                        <li class="footer-links"><a href="#" class="anchor-link">Women's Blog</a></li>
+                        <li class="footer-links"><a href="#" class="anchor-link">Men's Blog</a></li>
+                        <li class="footer-links"><a href="#" class="anchor-link">Press</a></li>
+                        <li class="footer-links"><a href="#" class="anchor-link">Investor Relations</a></li>
+                        <li class="footer-links"><a href="#" class="anchor-link">Careers</a></li>
+                        <li class="footer-links"><a href="#" class="anchor-link">Tech Blog</a></li>
+                    </ul>
+                </div>
+                <div class="fourth-column columns">
+                    <div class="footer-heading">Question?</div>
+                    <ul class="footer-links-list">
+                        <li class="footer-links"><a href="#" class="anchor-link">FAQ</a></li>
+                        <li class="footer-links"><a href="#" class="anchor-link">Help</a></li>
+                    </ul>
+
+                </div>
+                <div class="fifth-column columns">
+                    <div class="social-icon"><a href="https://facebook.com"><img
+                                src="https://sahirskd.github.io/Landing-page/assets/facebook.svg" alt=""></a></div>
+                    <div class="social-icon"><a href="https://instagram.com"><img
+                                src="https://sahirskd.github.io/Landing-page/assets/instagram.svg" alt=""></a></div>
+                    <div class="social-icon"><a href="https://youtube.com"><img
+                                src="https://sahirskd.github.io/Landing-page/assets/youtube.svg" alt=""></a></div>
+                    <div class="social-icon"><a href="https://twitter.com"><img
+                                src="https://sahirskd.github.io/Landing-page/assets/twitter.svg" alt=""></a></div>
+                    <div class="social-icon"><a href="https://pintrest.com"><img
+                                src="https://sahirskd.github.io/Landing-page/assets/pintrest.svg" alt=""></a></div>
+                </div>
+            </div>
+            <hr class="feature-separator">
+            <div class="fifth-column" id="copyright">
+
+                <div>Landing Page Made by <a style="color: #dd2e3e;" href="https://sahirskd.netlify.app/"
+                        class="anchor-link">Sahir khan</a></div>
+                <div><a href="#" class="anchor-link">Terms of Use</a> - <a href="#" class="anchor-link">Privacy
+                        Policy</a> - <a href="#" class="anchor-link">Supply Chain Information</a> - <a href="#"
+                        class="anchor-link">Ad Choices</a> -
+                    <a href="#" class="anchor-link">Sitemap</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script>
+        window.onload = () => {
+
+            var navButton = document.getElementById("nav-icon");
+            var mobileMenu = document.getElementById("hide-right-nav")
+            navButton.addEventListener("click", () => {
+                mobileMenu.classList.toggle("hidden")
+            })
+        };
+    </script>
+</body>
+
+</html>
